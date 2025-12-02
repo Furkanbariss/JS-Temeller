@@ -35,13 +35,14 @@ let object5 = {
     price: 26999
 };
 
+let product = [object0,object1,object2,object3,object4,object5];
 // kullanıcıdan input al
 let input = prompt("Lütfen aramak istediğiniz telefon modelinin markasını giriniz?")
 
 //arama algoritması
-smartPhones.brand.forEach(function(input){
-    if (smartPhones.brand.includes(input)){
-        console.log(smartPhones(smartPhones.brand.indexOf(input)));
-        console.log("--------------------------");
+product.forEach(function(object){
+    if(object.brand.toUpperCase().includes(input.toUpperCase(),0)){
+        console.log(object);
+        console.log(" ------------------------ ");
     }
 });
