@@ -58,3 +58,20 @@
 // todo.removeChild(todo_delete[2]);
 
 //--------------------------------------------------------------element yer değiştirme----------------------------------------------------------------
+
+// <h5 class="card-title">Todo Listesi</h5>
+//   const c_list = document.querySelectorAll(".card-body")[1];
+
+//  const newHeader = document.createElement("h5");
+//  newHeader.className="card-title";
+//  newHeader.innerHTML="YENİ Todo Listesi";
+
+
+
+// let deneme = c_list.children;
+
+//   c_list.replaceChild(newHeader,c_list.childNodes[0]); // ! ikiside node tipinde olmak zorunda
+//   console.log(c_list);
+//   console.log(deneme);
+
+//------------------------------------------------------------------------------------------------------------------------------
