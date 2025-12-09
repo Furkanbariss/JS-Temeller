@@ -42,3 +42,19 @@
 // console.log(todoAdd);
 
 //--------------------------------------------------------------element silme----------------------------------------------------------------
+
+// let todo = document.querySelector(".list-group");
+// let todo_delete = document.querySelectorAll(".list-group-item");
+
+
+// // todo_delete[1].remove();  
+// // todo_delete[3].remove();  
+
+
+// console.log(todo);
+// console.log(todo_delete);
+
+// // ikinci yol. 
+// todo.removeChild(todo_delete[2]);
+
+//--------------------------------------------------------------element yer değiştirme----------------------------------------------------------------
