@@ -5,17 +5,17 @@ const todoList = document.querySelector("#toDoList");
 const firstCardBody = document.querySelectorAll(".card-body")[0];
 const secondCardBody = document.querySelectorAll(".card-body")[1];
 const clearButton = document.querySelector("#todoClearButton");
+const searchForm = document.querySelector("#todoListForm");
+const searchInput = document.querySelector("#todoSearch");
 
-// let dizi =[todoForm,inputForm,buttonForm,todoList,firstCardBody,secondCardBody,clearButton];
-
-// dizi.forEach(function(e){
-// console.log(e);
-// console.log("--------------------");
-// })
 
 todoForm.addEventListener("submit",addTodo);
 clearButton.addEventListener("click",todoDeleteAll);
 secondCardBody.addEventListener("click",todoDelete);
+searchForm.addEventListener("submit",todoSearch);
+
+let todos = [];
+
 /* <li class="list-group-item d-flex justify-content-between">Todo 3
 <a href="#" class="delete-item">
     <i class="fa fa-remove"></i>
@@ -42,12 +42,15 @@ todoLink.appendChild(todoIcon);
 todoAdd.appendChild(todoLink);
 todoList.appendChild(todoAdd);
 
+todos.push(text);
 console.log("todo eklendi.");
 
 const todoId = Date.now();
 //sessionStorage.setItem(todoId,text);
 localStorage.setItem(todoId,text);
 console.log("Locale kaydedildi.");
+console.log(todos);
+
 };
 
 function todoDelete(e){
@@ -64,3 +67,14 @@ function todoDeleteAll(){
     localStorage.clear();
     console.log("tüm todolar lokalden silindi.");
 }
+
+function todoSearch(e){
+e.preventDefault();
+const input = searchInput.value.trim();
+    todos.forEach(function(object){
+        if(object.toUpperCase().includes(input.toUpperCase())){
+            console.log("Todo bulundu: " + object);
+        }
+    });
+}
+
