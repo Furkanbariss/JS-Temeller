@@ -42,12 +42,34 @@ console.log(e.target.textContent +" butonu çalıştı");
 //     e.preventDefault();
 // }
 
-const baslik = document.querySelectorAll(".card-title")[0];
-const input = document.querySelector("#todoName");
+// const baslik = document.querySelectorAll(".card-title")[0];
+// const input = document.querySelector("#todoName");
 
-input.addEventListener("keydown",run);
+// input.addEventListener("keydown",run);
 
 
-function run(e){
-    baslik.textContent = e.target.value;
-}
+// function run(e){
+//     baslik.textContent = e.target.value;
+// }
+
+//------------------------------------------------input eventları--------------------------------------------------------
+
+// focus
+// blur
+// copy
+// paste
+// cut
+// select
+
+const todo = document.querySelector("#todoName");
+
+todo.addEventListener("focus",run);
+todo.addEventListener("blur",run);
+todo.addEventListener("copy",run);
+todo.addEventListener("paste",run);
+todo.addEventListener("cut",run);
+todo.addEventListener("select",run);
+
+function run (e){
+    console.log(e.type);
+};
