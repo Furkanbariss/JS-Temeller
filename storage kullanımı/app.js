@@ -9,6 +9,12 @@ console.log('Kullanıcı Adı:', kullaniciAdi); // Çıktı: Kullanıcı Adı: A
 
 // Veriyi session storage'dan silme
 sessionStorage.removeItem('kullaniciAdi');
+
+let dizi = ['elma', 'muz', 'çilek'];
+// Diziyi session storage'a kaydetme (JSON.stringify ile)
+sessionStorage.setItem('meyveler', JSON.stringify(dizi));
+let alinanDizi = JSON.parse(sessionStorage.getItem('meyveler'));
+console.log('Meyveler:', alinanDizi); // Çıktı: Meyveler: [ 'elma', 'muz', 'çilek' ]
  
 // Tüm veriyi temizleme
 sessionStorage.clear();
