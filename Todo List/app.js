@@ -52,7 +52,9 @@ console.log("Locale kaydedildi.");
 
 function todoDelete(e){
     if(e.target.className=="fa fa-remove") {
-        
+        const todo = e.target.parentElement.parentElement;
+        todo.remove();
+        console.log("seçili todo kaldırıldı");
     };
 };
 
