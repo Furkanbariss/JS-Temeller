@@ -61,6 +61,7 @@ console.log(e.target.textContent +" butonu çalıştı");
 // cut
 // select
 
+/*
 const todo = document.querySelector("#todoName");
 
 todo.addEventListener("focus",run);
@@ -73,3 +74,7 @@ todo.addEventListener("select",run);
 function run (e){
     console.log(e.type);
 };
+
+
+*/
+
