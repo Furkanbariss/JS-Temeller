@@ -18,12 +18,13 @@ function addTodo(e){
     //içeriği alma
     const inputText = inputForm.value.trim();
     if (!inputText) {
-        alert("lütfen geçerli bir görev yazınız.");
+        addInfo("warning","lütfen geçerli bir görev yazınız.");
     }else{
         //arayüze ekleme
         addTodoUI(inputText);
         //strage a ekleme
         addTodoStorage(inputText);
+        addInfo("success","todo listeye eklendi.");
     }
 
     e.preventDefault();
@@ -64,4 +65,18 @@ function todosControl(){
     }else{
         todos = JSON.parse(localStorage.getItem("todos"));
     }
+}
+
+function addInfo (type,message){
+    // <div class="alert alert-warning" role="alert">
+    //  A simple warning alert—check it out!
+    // </div>
+    const div = document.createElement("div");
+    div.className="alert alert-" + type;
+    div.textContent=message;
+
+    firstCardBody.appendChild(div);
+    setTimeout(function(){
+        div.remove();
+    },2500);
 }
