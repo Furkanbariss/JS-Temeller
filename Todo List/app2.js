@@ -11,7 +11,18 @@ runEvents();
 
 function runEvents(){
     addForm.addEventListener("submit",addTodo);
-    document.addEventListener("DOMContentLoaded", pageLoaded);
+    document.addEventListener("DOMContentLoaded",pageLoaded);
+    secondCardBody.addEventListener("click",removeTodoUI);
+    clearButton.addEventListener("click",deleteAllTodo);
+};
+
+function deleteAllTodo(){
+    // arayüzden silme
+    todoList.innerHTML = "";
+    // localStorage.removeItem("todos");
+
+    // storagetan silme
+    localStorage.clear();
 };
 
 function pageLoaded(){
@@ -89,3 +100,23 @@ function addInfo (type,message){
     },2500);
 };
 
+function removeTodoUI(e){
+    // debugger;
+    if(e.target.className=="fa fa-remove"){
+        const todo = e.target.parentElement.parentElement;
+        todo.remove();
+        
+        removeStorage(todo.textContent);
+        addInfo("success","todo başarıyla silidi");
+    }
+};
+
+function removeStorage(removedTodo){
+    todosControl();
+    todos.forEach(function(todo,index){
+        if(removedTodo == todo){
+            todos.splice(index,1);
+        }
+    });
+    localStorage.setItem("todos",JSON.stringify(todos));
+};
