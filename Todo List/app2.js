@@ -11,6 +11,14 @@ runEvents();
 
 function runEvents(){
     addForm.addEventListener("submit",addTodo);
+    document.addEventListener("DOMContentLoaded", pageLoaded);
+};
+
+function pageLoaded(){
+        todosControl();
+        todos.forEach(function(todos){
+            addTodoUI(todos);
+        });
 };
 
 function addTodo(e){
@@ -65,7 +73,7 @@ function todosControl(){
     }else{
         todos = JSON.parse(localStorage.getItem("todos"));
     }
-}
+};
 
 function addInfo (type,message){
     // <div class="alert alert-warning" role="alert">
@@ -79,4 +87,5 @@ function addInfo (type,message){
     setTimeout(function(){
         div.remove();
     },2500);
-}
+};
+
